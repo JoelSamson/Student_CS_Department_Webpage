@@ -1,0 +1,319 @@
+<!----Survey Webpage-->
+<!DOCTYPE html>
+<html style="background-color: green">
+<head>
+<title>CS Department Survey</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/117510c07d.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="gmucs.css" type="text/css" />
+<!---some styles+-->
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: rgb(9, 9, 9);
+  line-height: 1.8;
+  background: rgb(253, 253, 253);
+}
+.w3-bar-block .w3-bar-item {
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+    color: white;
+}
+.w3-white, .w3-hover-white:hover {
+    color: #000!important;
+    background-color: #000!important;
+}
+
+/*copied part*/
+h4 {
+    font-family: 'Roboto', sans-serif, 'arial';
+    font-weight: 400;
+    font-size: 20px;
+    color: #9b9b9b;
+    line-height: 1.5;
+}
+
+  /*navbar*/
+
+br{
+    background-color: #209639;
+}
+
+</style>
+</head>
+<body style="margin:20px">
+
+<!-- Navbar (sit on top) -->
+<div class="nav-wrapper">
+    <div class="logo-container">
+        <img class="logo" src="gmu_logo.png" alt="Logo">
+    </div>
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i> MENU
+      </a>
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-tabs">
+                <li class="nav-tab"><a href="main.html" class="w3-bar-item w3-button"><i class="fa fa-house-chimney"></i> HOME</a></li>
+                <li class="nav-tab"><a href="csmain.html" class="w3-bar-item w3-button"><i class="fa fa-house-chimney"></i> CS Department Page</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+  </div>
+</div>
+
+<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="main.html" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a>
+    <a href="csmain.html" class="w3-bar-item w3-button" onclick="toggleFunction()">CS Department</a>
+
+  </div>
+
+<div class="gmulog">
+  <header class="w3-container ">
+    <div class="padded-row">
+        <div id="cs-logo  ">
+            <h1 class="heading">
+                <a class="img-link" href="">
+                    <img class="img-logo" src="logo.png" alt="GMU CS Department">
+                </a>
+            </h1>
+        </div>
+    </div>
+</header>
+</div>
+
+<div class="student-survey"><h1><center>Student Survey</center></h1></div>
+<p class="w3-container w3-xlarge">Please fill out the Survey regarding the semester start Campus Visit Held on August 19th</p>
+<p class="w3-container w3-xlarge">Feedback is Greatly appreciated and will help us improve on certain aspects during the next visit</p>
+<h3> <center>Enter Details Below</center></h3>
+
+<!---Survey Form-->
+<form method="post" autocomplete="on">
+    <fieldset class="w3-container">
+        <legend>User Information</legend>
+        <table class="w3-table">
+            <tr>
+                <!--First Name-->
+                <td><label for="fname">First name:*</label><br></td>
+                <td><input type="text" id="fname" name="fname" size="20" autofocus="on" placeholder="Enter your First Name" required><br></td>
+            </tr>
+            <tr>
+                <!--Last Name-->
+                <td><label for="lname">Last name:*</label><br></td>
+                <td> <input type="text" id="lname" name="lname" size="20" placeholder="Enter your Last Name" required><br></td>
+            </tr>
+            <tr>
+                <!--GMU Username-->
+                <td><label for="username">Username:*</label><br></td>
+                <td><input type="text" id="username" name="username" size="20" placeholder="NET UID" required><br></td>
+            </tr>
+            <tr>
+                <!---GMU Mail-->
+                <td><label for="email">Enter your GMU Email:*</label><br></td>
+                <td><input type="email" id="email" name="email" placeholder="your_username@gmu.edu" required><br></td>
+            </tr>
+            <tr>
+                <!---Phone Number-->
+                <td><label for="phone">Enter your phone number:</label><br></td>
+                <td><input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="+1-(xxx)-xxx-xxxx"><br></td>
+            </tr>
+            <tr>
+                <!---Address-->
+                <td><p>Address:</p><br></td>
+                <td><textarea name="message" rows="3" cols="40" placeholder="Address"></textarea><br></td>
+            </tr>
+            <tr>
+                <!----State-->
+                <td><label for="state">Enter State:*</label><br></td>
+                <td>
+                    <input type="text" name="state" id="state" list="state_list" placeholder="Select-State" required>
+                    <datalist id="state_list">
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <!-- etc -->
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <!--City-->
+                <td><label for="City">City:*</label><br></td>
+                <td><input type="text" id="City" name="City" size="20" placeholder="Enter City" required><br></td>
+            </tr>
+            <tr>
+                <!---State Code-->
+                <td><label for="country_code">State code:*</label><br></td>
+                <td><input type="text" id="country_code" name="country_code" pattern="[A-Za-z]{2}" title="Country Code 2 Letters" max=3 placeholder="State code" required><br></td>
+            </tr>
+            <tr>
+                <!----Pin Code-->
+                <td><label for="pin">PIN:*</label><br></td>
+                <td><input type="text" id="pin" name="pin" size="5" pattern="[0-9]{5}" title="Pincode 5 numbers" placeholder="Enter Pincode" required> <br></td>
+            </tr>
+            <tr>
+                <td>
+                    <!---Date-->
+                    <label for="todays_date">Enter Todays Date:</label><br></td>
+                    <td><input type="date" id="today_date" name="todays_date" max="2022-9-1" min="2022-8-19"><br></td>
+            </tr>
+            <tr>
+                <!--URL-->
+                <td> <label for="homepage">Enter your URL:</label><br></td>
+                <td><input type="url" id="homepage" name="homepage" placeholder="Your Website Address"><br></td>
+            </tr>
+</table>
+</fieldset>
+<br>
+<fieldset class="w3-container">
+    <legend>Feedback</legend>
+    <table class="w3-table">
+
+        <tr>
+            <!---CheckBox-->
+            <td><label for="liked_most">What did you like the most about the campus visit?*</label><br></td>
+            <td><label><input name="liked_most" type="checkbox" class="cb">Students</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Location</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Campus</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Atmosphere</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Dorm Rooms</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Sports</label><br>
+            </td>
+            <tr>
+                <!--Radio Buttons-->
+            <td><label for="how_did">How did you hear about our University*</label><br></td>
+            <td><label><input name="how_did" type="Radio" class="rb">Friend</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Senior</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Instagram</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Television</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Internet</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Other</label><br>
+                </td>
+            </tr>
+            <tr>
+                <!---Drop Down list-->
+                <td><label for="likely" id="likely" name="likely">How Likely are you going to be able to Recommend GMU to other People?*</label></td>
+                <td><select name="likely" id="likely" placeholder="Select" required>
+                    <option>Very Likely</option>
+                    <option>Likely</option>
+                    <option>Unlikely</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><p class="w3-large">Additional Comments</p></td>
+                <td><textarea name="message" rows="4" cols="40" placeholder="Please write any comments related to any aspect of the Campus visit."></textarea><br></td>
+            </tr>
+        </tr>
+    </table>
+</fieldset>
+<br>
+<fieldset class="w3-container">
+    <legend>Graduation Month and Year*</legend>
+    <table class="w3-table">
+        <tr>
+            <td><label for="grad-time">Please enter your graduation Month:*</label></td>
+            <td>
+                <label for="grad-month">Month:</label>
+                <input type="text" name="grad-month" id="grad-month" list="grad-list" required>
+                <datalist id="grad-list" required>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+                </datalist>
+                <br>
+                <br>
+                <label for="Year:">Year:</label>
+                <input type="text" id="year" name="year" placeholder="Enter Year" required>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<div class="" style="height:100px"><center>
+    <br>
+
+<button class="w3-green w3-button"><input type="submit" id="submit" onclick=""></button>
+<button class="w3-green w3-button"><input type="reset" id="reset" onclick=""></button></center>
+</div>
+</form>
+
+<div class=""><center><p>Link to go back to the CS Department Webpage</p><br><button class="w3-button w3-green"><a href="csmain.html" alt="">Go Back</a></button></center></div>
+
+<div class="w3-container w3-green" style="position:relative;     padding-bottom: 78px;
+top: -10%;">
+
+    <p>
+        Department of Computer Science<br>
+        Nguyen Engineering Building<br>
+        4400 University Drive<br>
+        Fairfax, VA 22030</p>
+        <hr>
+        <p> Contact<br>
+            703-993-1530 (P)<br>
+            703-993-1710 (F)</p>
+  </div>
+
+  <!---<div class="last w3-container" style="background:#333; height:200px;position:fixed"><div class="logo"><a href="cs.gmu.edu"><img src="gmu_white_logo.png" class="w3-border w3-padding image-logo" alt="Logo"></a></div></div>-->
+
+  <div class="fixed"><a href="https://www.gmu.edu/"><img src="gmu_white_logo.png" class="image-logo" alt="Logo"></a></div>
+
+
+
+
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
