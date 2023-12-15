@@ -1,5 +1,7 @@
 # Student Class Web Page and CS Department Information
 
+This is a project I did in my university.
+
 ## Part 1: Student Class Web Page
 
 ### Project Overview
